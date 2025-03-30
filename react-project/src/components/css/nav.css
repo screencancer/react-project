@@ -247,7 +247,6 @@ footer h1 {
 @media (max-width: 900px) {
   * {
     justify-content: center;
-    align-items: center;
   }
 
   header {
