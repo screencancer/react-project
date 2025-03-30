@@ -1,0 +1,208 @@
+.recent-page {
+    --main-section-color: #bbbbbb;
+    --background-color: #12a6a6;
+    --outside-color: #045959;
+    --font-color: #12a6a6;
+    --border-color: #2c5558;
+    --navbar-color: #144245;
+    --edit-btn-color: green;
+    --delete-btn-color: red;
+    --critical-color: red;
+    --card-body-color: #a7d4d9;
+    --card-head-color: #109595;
+  }
+  
+  .recent-page * {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .recent-page button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+  
+  .recent-page #navbar li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--navbar-color);
+    list-style: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .recent-page #navbar a {
+    color: var(--font-color);
+    text-decoration: none;
+  }
+  
+  .recent-page body {
+    background-color: var(--outside-color);
+  }
+  
+  .recent-page #content-section {
+    background-color: var(--background-color);
+    border: var(--border-color) 1px solid;
+  }
+  
+  .recent-page #content-section h1 {
+    margin-bottom: 30px;
+  }
+  
+  .recent-page #content-section h2 {
+    margin-bottom: 5px;
+  }
+  
+  .recent-page #content-section h3 {
+    margin-top: 5%;
+  }
+  
+  .recent-page #content-section a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .recent-page #recent-content {
+    background-color: var(--card-body-color);
+    margin-top: 10px;
+    border: var(--border-color) 1px solid;
+    width: 80vh;
+    height: auto;
+  }
+  
+  .recent-page #recent-content img {
+    width: 80vh;
+    height: auto;
+  }
+  
+  .recent-page #preview {
+    background-color: var(--card-body-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .recent-page #setting {
+    display: flex;
+    margin: 30px;
+  }
+  
+  .recent-page #setting h3,
+  .recent-page #setting button {
+    margin-right: 10px;
+  }
+  
+  .recent-page #footer-div {
+    background-color: var(--outside-color);
+    padding: 10px;
+    margin-top: 2%;
+  }
+  
+  @media (min-width: 900px) {
+    .recent-page #nav {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  
+    .recent-page #navbar ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  
+    .recent-page #navbar li {
+      padding: 10px;
+      background-color: var(--navbar-color);
+      list-style: none;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .recent-page #navbar a {
+      color: var(--font-color);
+      text-decoration: none;
+    }
+  
+    .recent-page body {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .recent-page #content-section {
+      height: 98vh;
+      margin-top: 2%;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .recent-page header {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .recent-page .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+  
+    .recent-page .up {
+      transform: rotate(-135deg);
+    }
+  
+    .recent-page .down {
+      transform: rotate(45deg);
+    }
+  
+    .recent-page .arrow.up {
+      transform: rotate(-135deg);
+      margin-bottom: 2px;
+    }
+  
+    .recent-page .arrow.down {
+      transform: rotate(45deg);
+    }
+  
+    .recent-page #navbar {
+      display: none;
+    }
+  
+    .recent-page #nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  
+    .recent-page #navbar ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  
+    .recent-page #recent-content,
+    .recent-page #recent-content img {
+      width: 100%;
+      height: auto;
+    }
+  }
