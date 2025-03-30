@@ -1,8 +1,8 @@
 import "./css/settings.css";
 
-function settings(){
-    return(
-        <main className="settings-page">
+function settings() {
+  return (
+    <main className="settings-page">
       <div id="content-section">
         <h1>Settings</h1>
         <div className="settings">
@@ -38,55 +38,88 @@ function settings(){
           <div className="setting" id="socials">
             <h3>Connect Socials: </h3>
             <div className="social-connections">
-              <button ><i className="fab fa-google"></i> Connect Google</button>
-              <button ><i className="fab fa-microsoft"></i> Connect Microsoft</button>
-              <button ><i className="fab fa-facebook"></i> Connect Facebook</button>
-              <button ><i className="fab fa-twitter"></i> Connect Twitter</button>
-              <button ><i className="fab fa-github"></i> Connect GitHub</button>
+              <button>
+                <i className="fab fa-google"></i> Connect Google
+              </button>
+              <button>
+                <i className="fab fa-microsoft"></i> Connect Microsoft
+              </button>
+              <button>
+                <i className="fab fa-facebook"></i> Connect Facebook
+              </button>
+              <button>
+                <i className="fab fa-twitter"></i> Connect Twitter
+              </button>
+              <button>
+                <i className="fab fa-github"></i> Connect GitHub
+              </button>
             </div>
           </div>
           <div className="setting" id="socials">
             <h3>Currently Linked Socials </h3>
             <div className="social-connections">
-              <p ><i className="fab fa-google"></i> Connected Google</p>
-              <p ><i className="fab fa-twitter"></i> Connected Twitter</p>
-              <p ><i className="fab fa-github"></i> Connected GitHub</p>
+              <p>
+                <i className="fab fa-google"></i> Connected Google
+              </p>
+              <p>
+                <i className="fab fa-twitter"></i> Connected Twitter
+              </p>
+              <p>
+                <i className="fab fa-github"></i> Connected GitHub
+              </p>
             </div>
           </div>
           <div className="setting">
-            <form method="POST" id="form"/>
+            <form method="POST" id="form" />
 
-                <h3>Contact us!</h3>
-                <input type="hidden" name="access_key" value="4554bff3-196d-40c0-85e6-f92ca5983fe1"/>
+            <h3>Contact us!</h3>
+            <input
+              type="hidden"
+              name="access_key"
+              value="4554bff3-196d-40c0-85e6-f92ca5983fe1"
+            />
 
-                <span className="contact-field">
-                    <title>Name</title>
-                    <input type="text" name="name" placeholder="Name" required/>
-                </span>
+            <span className="contact-field">
+              <title>Name</title>
+              <input type="text" name="name" placeholder="Name" required />
+            </span>
 
-                <span className="contact-field">
-                    <title>Email</title>
-                    <input type="text" name="name" placeholder="example@email.com" required/>
-                </span>
+            <span className="contact-field">
+              <title>Email</title>
+              <input
+                type="text"
+                name="name"
+                placeholder="example@email.com"
+                required
+              />
+            </span>
 
-                <span className="contact-field">
-                    <title>Message</title>
-                    <textarea name="message" placeholder="Message goes here" required></textarea>
-                </span>
-                
-                
-                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }}/>
+            <span className="contact-field">
+              <title>Message</title>
+              <textarea
+                name="message"
+                placeholder="Message goes here"
+                required
+              ></textarea>
+            </span>
 
-                <button type="submit">Submit Form</button>
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
+              style={{ display: "none" }}
+            />
 
-                <div id="result"></div>
+            <button type="submit">Submit Form</button>
 
-            <form/>
+            <div id="result"></div>
+
+            <form />
+          </div>
         </div>
-        </div>
-        </div>
+      </div>
     </main>
-        );
-};
+  );
+}
 
 export default settings;

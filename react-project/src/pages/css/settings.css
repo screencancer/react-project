@@ -1,252 +1,252 @@
 .settings-page {
-    --main-section-color: #bbbbbb;
-    --background-color: #12a6a6;
-    --outside-color: #045959;
-    --font-color: #12a6a6;
-    --border-color: #2c5558;
-    --navbar-color: #144245;
-    --edit-btn-color: green;
-    --delete-btn-color: red;
-    --critical-color: red;
-    --card-body-color: #a7d4d9;
-    --card-head-color: #109595;
+  --main-section-color: #bbbbbb;
+  --background-color: #12a6a6;
+  --outside-color: #045959;
+  --font-color: #12a6a6;
+  --border-color: #2c5558;
+  --navbar-color: #144245;
+  --edit-btn-color: green;
+  --delete-btn-color: red;
+  --critical-color: red;
+  --card-body-color: #a7d4d9;
+  --card-head-color: #109595;
+}
+
+.settings-page * {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.settings-page #navbar li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--navbar-color);
+  list-style: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-page header button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.settings-page #navbar a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+.settings-page #form {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-page .contact-field title {
+  display: block;
+}
+
+.settings-page .contact-field {
+  margin-bottom: 5px;
+}
+
+.settings-page textarea {
+  resize: none;
+  width: 100%;
+  height: 74%;
+  margin-bottom: 10px;
+}
+
+.settings-page body {
+  background-color: var(--outside-color);
+}
+
+.settings-page #content-section {
+  background-color: var(--background-color);
+  border: var(--border-color) 1px solid;
+}
+
+.settings-page #content-section h1 {
+  margin-bottom: 30px;
+}
+
+.settings-page .setting {
+  display: flex;
+  margin: 30px;
+  flex-direction: column;
+}
+
+.settings-page #socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-page .social-connections {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-page .social-connections button {
+  margin-bottom: 5px;
+}
+
+.settings-page .setting h3,
+.settings-page .setting button {
+  margin-right: 10px;
+}
+
+.settings-page #footer-div {
+  background-color: var(--outside-color);
+  padding: 10px;
+  margin-top: 2%;
+}
+
+.settings-page .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.settings-page .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.settings-page .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.settings-page .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.settings-page input:checked + .slider {
+  background-color: var(--edit-btn-color);
+}
+
+.settings-page input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+@media (min-width: 900px) {
+  .settings-page #nav {
+    display: flex;
+    justify-content: space-evenly;
   }
-  
-  .settings-page * {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+
+  .settings-page #navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
   }
-  
-  .settings-page #navbar li {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: var(--navbar-color);
-    list-style: none;
-    width: 100%;
+
+  .settings-page body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .settings-page #content-section {
+    height: 100%;
+    margin-top: 2%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .settings-page header {
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
-  
-  .settings-page header button {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-  }
-  
-  .settings-page #navbar a {
-    color: var(--font-color);
-    text-decoration: none;
-  }
-  
-  .settings-page #form {
-    display: flex;
     flex-direction: column;
   }
-  
-  .settings-page .contact-field title {
-    display: block;
+
+  .settings-page .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
   }
-  
-  .settings-page .contact-field {
-    margin-bottom: 5px;
+
+  .settings-page .up {
+    transform: rotate(-135deg);
   }
-  
-  .settings-page textarea {
-    resize: none;
-    width: 100%;
-    height: 74%;
-    margin-bottom: 10px;
+
+  .settings-page .down {
+    transform: rotate(45deg);
   }
-  
-  .settings-page body {
-    background-color: var(--outside-color);
+
+  .settings-page .arrow.up {
+    transform: rotate(-135deg);
+    margin-bottom: 2px;
   }
-  
+
+  .settings-page .arrow.down {
+    transform: rotate(45deg);
+  }
+
+  .settings-page #navbar {
+    display: none;
+  }
+
+  .settings-page #nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .settings-page #navbar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
   .settings-page #content-section {
-    background-color: var(--background-color);
-    border: var(--border-color) 1px solid;
+    height: 100%;
+    margin-top: 2%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .settings-page #content-section h1 {
-    margin-bottom: 30px;
-  }
-  
+
   .settings-page .setting {
-    display: flex;
-    margin: 30px;
     flex-direction: column;
+    align-items: center;
   }
-  
-  .settings-page #socials {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .settings-page .social-connections {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .settings-page .social-connections button {
-    margin-bottom: 5px;
-  }
-  
+
   .settings-page .setting h3,
   .settings-page .setting button {
-    margin-right: 10px;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
-  
-  .settings-page #footer-div {
-    background-color: var(--outside-color);
-    padding: 10px;
-    margin-top: 2%;
-  }
-  
-  .settings-page .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .settings-page .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .settings-page .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-  }
-  
-  .settings-page .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-  }
-  
-  .settings-page input:checked + .slider {
-    background-color: var(--edit-btn-color);
-  }
-  
-  .settings-page input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  
-  @media (min-width: 900px) {
-    .settings-page #nav {
-      display: flex;
-      justify-content: space-evenly;
-    }
-  
-    .settings-page #navbar ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      list-style-type: none;
-    }
-  
-    .settings-page body {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .settings-page #content-section {
-      height: 98vh;
-      margin-top: 2%;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
-  @media (max-width: 900px) {
-    .settings-page header {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
-  
-    .settings-page .arrow {
-      border: solid black;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 3px;
-    }
-  
-    .settings-page .up {
-      transform: rotate(-135deg);
-    }
-  
-    .settings-page .down {
-      transform: rotate(45deg);
-    }
-  
-    .settings-page .arrow.up {
-      transform: rotate(-135deg);
-      margin-bottom: 2px;
-    }
-  
-    .settings-page .arrow.down {
-      transform: rotate(45deg);
-    }
-  
-    .settings-page #navbar {
-      display: none;
-    }
-  
-    .settings-page #nav {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-    }
-  
-    .settings-page #navbar ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-    }
-  
-    .settings-page #content-section {
-      height: 98vh;
-      margin-top: 2%;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .settings-page .setting {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .settings-page .setting h3,
-    .settings-page .setting button {
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-  }
+}
