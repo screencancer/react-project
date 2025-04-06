@@ -16,7 +16,7 @@ const BoardPlan = () => {
   useEffect(() => {
     (async () => {
       const response = await axios.get(
-        "https://betterplanning-server.onrender.com/api/cakes"
+        "https://betterplanning-server.onrender.com/api/boards"
         //"https://housing-backend-oubs.onrender.com/api/houses/"
       );
       setBoards(response.data);
