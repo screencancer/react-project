@@ -95,6 +95,11 @@ footer h1 {
 }
 
 @media (min-width: 900px) {
+
+#toggle{
+    display: none;
+}
+
   #nav {
     display: flex;
     justify-content: space-evenly;
@@ -242,11 +247,35 @@ footer h1 {
     padding: 10px;
     margin-top: 2%;
   }
+
+
+  .hide-small {
+    display: flex;
+  }
 }
 
 @media (max-width: 900px) {
   * {
     justify-content: center;
+  }
+
+  #toggle{
+    left: 5px;
+    background-color: var(--outside-color);
+    width: fit-content;
+    padding: 1px 3px;
+    margin-bottom: 2px;
+}
+
+#toggle div{
+    width: 25px;
+    height: 2px;
+    background: white;
+    margin: 6px 0;
+}
+
+.hide-small {
+    display: none;
   }
 
   header {
@@ -281,6 +310,14 @@ footer h1 {
     justify-content: space-evenly;
   }
 
+  #toggle{
+    display: block;
+  }
+
+  .hidden{
+    display: none;
+  }
+
   header {
     width: 100%;
   }
@@ -296,7 +333,6 @@ footer h1 {
   }
 
   #navbar ul {
-    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;

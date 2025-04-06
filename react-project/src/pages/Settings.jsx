@@ -1,6 +1,31 @@
+import React, {useState} from 'react'; 
 import "./css/settings.css";
 
-function settings() {
+function Settings() {
+    const [result, setResult] = React.useState("");
+  
+    const onSubmit = async (event) => {
+      event.preventDefault();
+      setResult("Sending....");
+      const formData = new FormData(event.target);
+  
+      formData.append("access_key", "4554bff3-196d-40c0-85e6-f92ca5983fe1");
+  
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.target.reset();
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    };
   return (
     <main className="settings-page">
       <div id="content-section">
@@ -70,51 +95,15 @@ function settings() {
             </div>
           </div>
           <div className="setting">
-            <form method="POST" id="form" />
-
-            <h3>Contact us!</h3>
-            <input
-              type="hidden"
-              name="access_key"
-              value="4554bff3-196d-40c0-85e6-f92ca5983fe1"
-            />
-
-            <span className="contact-field">
-              <title>Name</title>
-              <input type="text" name="name" placeholder="Name" required />
-            </span>
-
-            <span className="contact-field">
-              <title>Email</title>
-              <input
-                type="text"
-                name="name"
-                placeholder="example@email.com"
-                required
-              />
-            </span>
-
-            <span className="contact-field">
-              <title>Message</title>
-              <textarea
-                name="message"
-                placeholder="Message goes here"
-                required
-              ></textarea>
-            </span>
-
-            <input
-              type="checkbox"
-              name="botcheck"
-              className="hidden"
-              style={{ display: "none" }}
-            />
-
-            <button type="submit">Submit Form</button>
-
-            <div id="result"></div>
-
-            <form />
+        <form onSubmit={onSubmit}>
+          <input type="text" name="name" required/>
+          <input type="email" name="email" required/>
+          <textarea name="message" required></textarea>
+  
+          <button type="submit">Submit Form</button>
+  
+        </form>
+        <span>{result}</span>
           </div>
         </div>
       </div>
@@ -122,4 +111,4 @@ function settings() {
   );
 }
 
-export default settings;
+export default Settings;

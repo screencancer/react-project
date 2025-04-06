@@ -1,11 +1,23 @@
 import { Outlet, Link } from "react-router-dom";
 import "./css/nav.css";
+import { useState } from "react";
 
 function Navigation() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+        console.log(menuOpen)
+    }
   return (
     <div className="nav-bar-selector" id="navbar">
       <nav>
-        <ul>
+        <div id="toggle" onClick={toggleMenu}>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul className={menuOpen ? "" : "hide-small"}>
           <li>
             <Link to="/">Home</Link>
           </li>
