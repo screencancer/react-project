@@ -20,7 +20,7 @@ const EditDialogue = (props) => {
     console.log(...formData);
 
     const response = await fetch(
-      `http://localhost:3000/api/columns/${props.columnId}/cards/${props.cardId}`,
+      `https://betterplanning-server.onrender.com/api/columns/${props.columnId}/cards/${props.cardId}`,
       {
         method: "PUT",
         body: JSON.stringify(Object.fromEntries(formData)),

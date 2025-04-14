@@ -20,7 +20,7 @@ const AddDialogue = (props) => {
     console.log(...formData);
 
     const response = await fetch(
-      `http://localhost:3000/api/columns/${props.columnId}`,
+      `https://betterplanning-server.onrender.com/api/columns/${props.columnId}`,
       {
         method: "POST",
         body: JSON.stringify(Object.fromEntries(formData)),
