@@ -26,7 +26,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/columns");
+        const response = await axios.get("https://betterplanning-server.onrender.com/api/");
         setColumns(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
