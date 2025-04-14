@@ -21,7 +21,7 @@ function App() {
           <Route path="recent" element={<Recent />} />
           <Route path="settings" element={<Settings />} />
           <Route path="plans" element={<Plans />} />
-          <Route path="/card" element={<Card />} />
+          <Route path="card" element={<Card />} />
         </Route>
       </Routes>
     </BrowserRouter>

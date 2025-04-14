@@ -12,6 +12,11 @@
   --card-head-color: #109595;
 }
 
+a{
+    color: black;
+    text-decoration: none;
+}
+
 .plans-page * {
   margin: 0;
   padding: 0;

@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
+
 const Board = (props) => {
   const srcImg = `https://betterplanning-server.onrender.com/${props.imageSource}`;
   return (
     <div className="plan">
+    <Link to="/">
       <div className="card">
         <img src={srcImg} alt={props.title} />
         <div className="inner-card">
@@ -11,6 +14,7 @@ const Board = (props) => {
           <h3>Last Modified {props.modifiedDate}</h3>
         </div>
       </div>
+      </Link>
       <h3 className="board-title">{props.title}</h3>
     </div>
   );

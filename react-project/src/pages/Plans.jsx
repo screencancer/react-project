@@ -17,7 +17,7 @@ const BoardPlan = () => {
     (async () => {
       const response = await axios.get(
         "https://betterplanning-server.onrender.com/api/boards"
-        //"https://housing-backend-oubs.onrender.com/api/houses/"
+        //"http://localhost:3000/api/boards/"
       );
       setBoards(response.data);
     })();
@@ -27,18 +27,18 @@ const BoardPlan = () => {
       <div id="content-section">
         <div id="plans">
           <div id="plan-row">
-{boards.map((props) => (
-  <Board
-    key={props.id}
-    imageSource={props.image_source}
-    title={props.title}
-    numCards={props.num_cards}
-    numCategories={props.num_categories}
-    percentDone={props.percent_done}
-    modifiedDate={props.modified_date}
-  />
-))}
-</div>
+            {boards.map((boardData) => (
+              <Board
+                key={boardData.id}
+                imageSource={boardData.image_source}
+                title={boardData.title}
+                numCards={boardData.num_cards}
+                numCategories={boardData.num_categories}
+                percentDone={boardData.percent_done}
+                modifiedDate={boardData.modified_date}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </main>

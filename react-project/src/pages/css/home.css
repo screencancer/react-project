@@ -14,6 +14,19 @@
   --card-head-color: #109595;
 }
 
+.w3-modal-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #109595;
+}
+
+.w3-container form *{
+    margin: 10px;
+    
+}
+
 .home-page * {
   margin: 0;
   padding: 0;
