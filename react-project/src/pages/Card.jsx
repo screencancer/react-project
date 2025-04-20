@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import "./css/card.css";
 import { useState } from "react";
 import EditDialogue from "../components/edit-dialogue";
+import axios from "axios";
 
 function Card() {
   const [cards, setCards] = useState([]);
@@ -29,6 +30,21 @@ function Card() {
 
   const closeEditDialogue = () => {
     setShowEditDialogue(false);
+  };
+  //https://betterplanning-server.onrender.com/api/columns/${props.columnId}/cards/${props.cardId}
+
+  const deleteRequest = async () => {
+    try {
+      const response = await axios.delete(
+        `https://betterplanning-server.onrender.com/api/columns/${state.columnId}/cards/${state.cardId}`
+      );
+
+      if (response.status === 200) {
+        window.location.pathname = "/react-project/";
+      }
+    } catch (error) {
+      console.error("Delete request failed:", error);
+    }
   };
 
   return (
@@ -70,7 +86,9 @@ function Card() {
           <button id="editbtn" onClick={openEditDialogue}>
             Edit
           </button>
-          <button id="deletebtn">Delete</button>
+          <button id="deletebtn" onClick={deleteRequest}>
+            Delete
+          </button>
         </div>
       </div>
     </main>
