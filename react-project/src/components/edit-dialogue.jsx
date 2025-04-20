@@ -46,7 +46,7 @@ const EditDialogue = (props) => {
           <span
             id="dialog-close"
             className="w3-button w3-display-topright"
-            onClick={props.closeEditDialogue}
+            onClick={props.closeEditDialog}
           >
             &times;
           </span>
