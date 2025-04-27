@@ -12,6 +12,12 @@ const AddDialogue = (props) => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
+  const handleImageChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.files[0];
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
   const addToServer = async (event) => {
     event.preventDefault();
     setResult("Sending...");
@@ -23,10 +29,7 @@ const AddDialogue = (props) => {
       `https://betterplanning-server.onrender.com/api/columns/${props.columnId}`,
       {
         method: "POST",
-        body: JSON.stringify(Object.fromEntries(formData)),
-        headers: {
-          "Content-Type": "application/json",
-        },
+        body: formData,
       }
     );
 
@@ -106,7 +109,27 @@ const AddDialogue = (props) => {
               </select>
             </p>
 
-            <section className="columns"></section>
+            <section className="columns">
+              <p id="img-prev-section">
+                <img
+                  id="img-prev"
+                  src={
+                    inputs.img != null ? URL.createObjectURL(inputs.img) : ""
+                  }
+                  alt=""
+                />
+              </p>
+              <p id="img-upload">
+                <label htmlFor="img">Upload Image:</label>
+                <input
+                  type="file"
+                  id="img"
+                  name="img"
+                  onChange={handleImageChange}
+                  accept="image/*"
+                />
+              </p>
+            </section>
 
             <p>
               <button type="submit">Submit</button>

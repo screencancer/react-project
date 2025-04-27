@@ -12,16 +12,18 @@ function Home() {
   const [selectedColumnId, setSelectedColumnId] = useState(null);
 
   const updateCard = (newCard) => {
-    setColumns(prevColumns => prevColumns.map(column => {
-    console.log(column, newCard)
-      if (column.id === newCard.id) {
-        console.log(column.id, "=", newCard.id)
-        column.cards = newCard.cards;
+    setColumns((prevColumns) =>
+      prevColumns.map((column) => {
+        console.log(column, newCard);
+        if (column.id === newCard.id) {
+          console.log(column.id, "=", newCard.id);
+          column.cards = newCard.cards;
+          return column;
+        }
+        console.log(column, "New card ", newCard);
         return column;
-      }
-      console.log(column, "New card ", newCard);
-      return column;
-    }));
+      })
+    );
   };
 
   const openAddDialogue = (title) => {
@@ -36,10 +38,12 @@ function Home() {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://betterplanning-server.onrender.com/api/columns");
-        setColumns(response.data.map(column => ({
-          ...column,
-          cards: column.cards || []
-        })));
+        setColumns(
+          response.data.map((column) => ({
+            ...column,
+            cards: column.cards || [],
+          }))
+        );
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -73,6 +77,7 @@ function Home() {
                   task2Name={card.task2Name}
                   statusClass={card.statusClass}
                   classDisplay={card.classDisplay}
+                  img={card.img}
                   additionalContent={
                     card.embeddedContent && (
                       <div className="embeded-content">

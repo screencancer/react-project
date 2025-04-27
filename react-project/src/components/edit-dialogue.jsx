@@ -2,13 +2,29 @@ import React, { useState } from "react";
 import "./css/dialogue.css";
 
 const EditDialogue = (props) => {
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState({
+    _id: props._id,
+    header: props.header,
+    task1Name: props.task1Name,
+    task2Name: props.task2Name,
+    statusClass: props.statusClass,
+    prev_img: props.img,
+    img: null,
+  });
+
+  console.log("prev img is ", inputs.prev_img);
   const [result, setResult] = useState("");
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
 
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleImageChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.files[0];
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
@@ -23,10 +39,7 @@ const EditDialogue = (props) => {
       `https://betterplanning-server.onrender.com/api/columns/${props.columnId}/cards/${props.cardId}`,
       {
         method: "PUT",
-        body: JSON.stringify(Object.fromEntries(formData)),
-        headers: {
-          "Content-Type": "application/json",
-        },
+        body: formData,
       }
     );
 
@@ -106,7 +119,31 @@ const EditDialogue = (props) => {
               </select>
             </p>
 
-            <section className="columns"></section>
+            <section className="columns">
+              <p id="img-prev-section">
+                <img
+                  id="img-prev"
+                  src={
+                    inputs.img != null
+                      ? URL.createObjectURL(inputs.img)
+                      : inputs.prev_img != null
+                      ? `https://betterplanning-server.onrender.com/${inputs.prev_img}`
+                      : ""
+                  }
+                  alt=""
+                />
+              </p>
+              <p id="img-upload">
+                <label htmlFor="img">Upload Image:</label>
+                <input
+                  type="file"
+                  id="img"
+                  name="img"
+                  onChange={handleImageChange}
+                  accept="image/*"
+                />
+              </p>
+            </section>
 
             <p>
               <button type="submit">Submit</button>

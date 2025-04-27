@@ -9,6 +9,7 @@ const CardItem = (props) => {
     task2Name: props.task2Name,
     classDisplay: props.classDisplay,
     statusClass: props.statusClass,
+    img: props.img,
   };
 
   return (
@@ -34,6 +35,15 @@ const CardItem = (props) => {
                 <h2>{props.task2Name}</h2>
               </span>
             </label>
+          )}
+
+          {props.img && (
+            <div className="card-img-container">
+              <img
+                src={`https://betterplanning-server.onrender.com/${props.img}`}
+                className="card-img"
+              />
+            </div>
           )}
 
           {props.additionalContent}

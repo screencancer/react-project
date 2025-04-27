@@ -17,7 +17,7 @@ const BoardPlan = () => {
     (async () => {
       const response = await axios.get(
         "https://betterplanning-server.onrender.com/api/boards"
-        //"http://localhost:3000/api/boards/"
+        //"https://betterplanning-server.onrender.com/api/boards/"
       );
       setBoards(response.data);
     })();

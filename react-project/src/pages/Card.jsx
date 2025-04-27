@@ -16,6 +16,9 @@ function Card() {
     task2Name = "Default Task 2",
     statusClass = "critical",
     classDisplay = "Critical",
+    img = "",
+    columnId,
+    cardId,
   } = state;
 
   console.log("Received state:", state, "at location ", location);
@@ -30,6 +33,7 @@ function Card() {
 
   const closeEditDialogue = () => {
     setShowEditDialogue(false);
+    window.location.pathname = "/react-project/";
   };
   //https://betterplanning-server.onrender.com/api/columns/${props.columnId}/cards/${props.cardId}
 
@@ -56,6 +60,11 @@ function Card() {
             updateCard={updateCard}
             columnId={state.columnId}
             cardId={state.cardId}
+            header={state.header}
+            task1Name={state.task1Name}
+            task2Name={state.task2Name}
+            statusClass={state.statusClass}
+            img={state.img}
           />
         ) : (
           ""
